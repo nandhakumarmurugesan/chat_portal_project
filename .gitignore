@@ -1,2 +1,7 @@
 env
 .env
+document_portal_project.egg-info
+venv/
+__pycache__/
+*.pyc
+test.py
