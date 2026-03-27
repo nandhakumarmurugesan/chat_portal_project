@@ -16,11 +16,12 @@ class CustomLogger:
             format='%(asctime)s - %(levelname)s - %(message)s',
             level=logging.INFO
             )
-        
+
     def get_logger(self,name=__file__):
         return logging.getLogger(os.path.basename(name))
-    
+
 if __name__=="__main__":
     logger=CustomLogger()
     logger=logger.get_logger(__file__)
     logger.info("Custom Logger Initialized. This is an info message.")
+    
