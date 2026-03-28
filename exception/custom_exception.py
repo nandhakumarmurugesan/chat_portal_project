@@ -3,6 +3,7 @@ import traceback
 from logger.custom_logger import CustomLogger
 logger=CustomLogger().get_logger("__file__")
 
+
 class DocumentPortalException(Exception):
     #custom exception for the document portal
     def __init__(self,error_message,error_details:sys):
@@ -11,7 +12,6 @@ class DocumentPortalException(Exception):
         self.lineno=exc_tb.tb_lineno
         self.error_message=str(error_message)
         self.traceback_str= ''.join(traceback.format_exception(*error_details.exc_info()))        
-        pass
     def __str__(self):
         return f"""
         Error occurred in file: {self.file_name} at line: [{self.lineno}] with 
