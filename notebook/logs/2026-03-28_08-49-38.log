@@ -1,0 +1,27 @@
+2026-03-28 08:49:43,163 - ERROR - 
+        Error occurred in file: C:\Users\91984\AppData\Local\Temp\ipykernel_10832\2002288426.py at line: [19] with 
+        message: division by zero and
+        traceback: Traceback (most recent call last):
+  File "C:\Users\91984\AppData\Local\Temp\ipykernel_10832\2002288426.py", line 19, in <module>
+    a = 1 / 0
+ZeroDivisionError: division by zero
+
+        
+2026-03-28 08:50:32,679 - ERROR - 
+        Error occurred in file: C:\Users\91984\AppData\Local\Temp\ipykernel_10832\2002288426.py at line: [19] with 
+        message: division by zero and
+        traceback: Traceback (most recent call last):
+  File "C:\Users\91984\AppData\Local\Temp\ipykernel_10832\2002288426.py", line 19, in <module>
+    a = 1 / 0
+ZeroDivisionError: division by zero
+
+        
+2026-03-28 08:50:58,229 - ERROR - 
+        Error occurred in file: C:\Users\91984\AppData\Local\Temp\ipykernel_10832\2002288426.py at line: [19] with 
+        message: division by zero and
+        traceback: Traceback (most recent call last):
+  File "C:\Users\91984\AppData\Local\Temp\ipykernel_10832\2002288426.py", line 19, in <module>
+    a = 1 / 0
+ZeroDivisionError: division by zero
+
+        
