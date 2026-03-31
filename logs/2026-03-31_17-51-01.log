@@ -1,0 +1,4 @@
+{"available_keys": ["GOOGLE_API_KEY", "GROQ_API_KEY"], "timestamp": "2026-03-31T12:21:01.774006Z", "level": "info", "event": "All required environment variables are set"}
+{"config_keys": ["faiss_db", "embedding_model", "retriever", "llm"], "timestamp": "2026-03-31T12:21:01.779988Z", "level": "info", "event": "Configuration loaded successfully"}
+{"timestamp": "2026-03-31T12:21:01.780989Z", "level": "info", "event": "Starting to load embedding model ..."}
+HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:batchEmbedContents "HTTP/1.1 404 Not Found"

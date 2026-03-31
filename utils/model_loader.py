@@ -98,6 +98,10 @@ if __name__ == "__main__":
     embedding_model = loader.load_embeddings()
     print(f"Embedding model loaded: {embedding_model}")
     
+    # embed the model
+    result = embedding_model.embed_content("How are you?")
+    print(f"Embedding result: {result}")
+    
     #Test LLM loading based on yaml config
     llm_model = loader.load_llm()
     print(f"LLM model loaded: {llm_model}")
