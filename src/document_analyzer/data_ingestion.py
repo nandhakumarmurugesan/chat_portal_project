@@ -28,15 +28,16 @@ class DocumentHandler:
         
         self.log.info(
                     f"PDFHandler initialized with session_id: {self.session_id}," 
-                    f"session_path: {self.session_path},"
-                    f"data_dir: {self.data_dir}" )
+                    f"session_path: {self.session_path}," 
+                    )
             
     def save_pdf(self):
         """Saves the uploaded PDF file to the specified directory with a unique name.
            Logs the action and handles exceptions gracefully.
         """
         try:
-            pass
+            
+           pass 
         except Exception as e:
             self.log.error(f"Error initializing DocumentHandler: {e}")
             raise DocumentPortalException("Failed to initialize DocumentHandler:", e) from e

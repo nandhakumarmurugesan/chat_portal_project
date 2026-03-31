@@ -1,5 +1,0 @@
-{"available_keys": ["GOOGLE_API_KEY", "GROQ_API_KEY"], "timestamp": "2026-03-31T11:55:05.078685Z", "level": "info", "event": "All required environment variables are set"}
-{"config_keys": ["faiss_db", "embedding_model", "retriever", "llm"], "timestamp": "2026-03-31T11:55:05.094615Z", "level": "info", "event": "Configuration loaded successfully"}
-{"timestamp": "2026-03-31T11:55:05.094615Z", "level": "info", "event": "Starting to load embedding model ..."}
-{"timestamp": "2026-03-31T11:55:05.255039Z", "level": "info", "event": "Starting to load LLM model ..."}
-{"provider": "groq", "model_name": "deepseek-r1-distill-llama-70b", "temperature": 0, "max_tokens": 2048, "timestamp": "2026-03-31T11:55:05.256036Z", "level": "info", "event": "LLM configuration loaded"}

@@ -1,2 +1,0 @@
-{"user_id": 123, "file_name": "document.pdf", "timestamp": "2026-03-31T02:37:03.185935Z", "level": "info", "event": "user uploaded a pdf"}
-{"user_id": 123, "error": "File format not supported", "timestamp": "2026-03-31T02:37:03.185935Z", "level": "error", "event": "Failed to process the document"}

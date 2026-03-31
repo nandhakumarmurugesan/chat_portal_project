@@ -1,1 +1,0 @@
-{"timestamp": "2026-03-31T16:30:48.104192Z", "level": "error", "event": "Error initializing DocumentHandler: name 'DATA_STORAGE_PATH' is not defined"}
