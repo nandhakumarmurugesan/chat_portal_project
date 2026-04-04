@@ -8,4 +8,6 @@ pypdf
 faiss-cpu
 structlog
 PyMupdf
+langchain-core
+langchain-classic
 -e.

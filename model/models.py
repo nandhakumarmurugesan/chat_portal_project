@@ -15,10 +15,10 @@ class Metadata(BaseModel):
     PageCount: Union[int, str]  # Some PDFs might have non-integer page counts, hence Union
     SentimentTone: str
 
-class 2:
+class two:
     pass
 
-class 3:
+class three:
     pass
     
     
