@@ -75,7 +75,8 @@ if __name__ == "__main__":
     from io import BytesIO
     handler = DocumentHandler()
     
-    pdf_path = "C:\\Users\\91984\\chat_portal_project\\data\\document_analysis\\zero Maintanance.pdf"
+    #pdf_path = "C:\\Users\\91984\\chat_portal_project\\data\\document_analysis\\Zero_Maintanance.pdf"
+    pdf_path = "C:\\Users\\91984\\chat_portal_project\\data\\document_analysis\\Laws_Relating_to_Maintenance_in_India.pdf"
     
     class DummyFile:
         def __init__(self, file_path):
