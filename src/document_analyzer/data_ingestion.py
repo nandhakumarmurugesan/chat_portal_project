@@ -54,7 +54,7 @@ class DocumentHandler:
         
     def read_pdf(self, pdf_path: str)-> str:
         """Reads the content of a PDF file and returns it as text.
-           Logs the action and handles exceptions gracefully.
+           Logs the action and handles exceptions.
         """
         try:
             text_chunks = []
