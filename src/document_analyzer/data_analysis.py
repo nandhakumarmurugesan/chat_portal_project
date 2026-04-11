@@ -7,7 +7,7 @@ from model.models import *
 from langchain_core.output_parsers import JsonOutputParser
 #from langchain-core.output_parsers import OutputFixingParser
 from langchain_classic.output_parsers import OutputFixingParser
-from prompt.prompt_library import *
+from prompt.prompt_library import PROMPT_REGISTRY
 
 class DocumentAnalyzer:
     """Analyzes document using pre=trained models and extracts relevant information
@@ -25,7 +25,7 @@ class DocumentAnalyzer:
                 llm=self.llm,
                 parser=self.parser
             )
-            self.prompt = prompt
+            self.prompt = PROMPT_REGISTRY["document_analysis"]
             self.log.info("DocumentAnalyzer initialized successfully")
             
         except Exception as e:

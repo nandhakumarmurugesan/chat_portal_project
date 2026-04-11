@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, RootModel
 from typing import List, Optional, Dict, Any, Union
 
 class Metadata(BaseModel):
@@ -15,10 +15,14 @@ class Metadata(BaseModel):
     PageCount: Union[int, str]  # Some PDFs might have non-integer page counts, hence Union
     SentimentTone: str
 
-class two:
-    pass
+class ChangeFormat(BaseModel):
+    """Pydantic model to represent the change format for documents.
+       This model can be extended with additional fields as needed.
+    """
+    Page: str
+    changes: str
 
-class three:
+class SummaryResponse(RootModel[list[ChangeFormat]]):
     pass
     
     
