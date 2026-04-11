@@ -10,7 +10,8 @@ document_analysis_prompt = ChatPromptTemplate.from_template("""
     """
 )
 
-document_comparison_prompt= ChatPromptTemplate.from_template("""
+document_comparison_prompt= ChatPromptTemplate.from_template(
+        """
         You are provided with two documents. Your task is to do the following
          1. compate the content in the two pdfs
          2. Identify the difference in PDF and note down the page numbers
