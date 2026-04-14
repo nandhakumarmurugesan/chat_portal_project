@@ -10,4 +10,5 @@ structlog
 PyMupdf
 langchain-core
 langchain-classic
+pandas
 -e.
