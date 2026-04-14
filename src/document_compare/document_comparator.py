@@ -13,7 +13,7 @@ from document_compare.data_ingestion import DocumentComparator
 
 class DocumentComparatorLLM:
     def __init__(self):
-        _load_dotenv() 
+        load_dotenv() 
         self.log=CustomLogger().get_logger(__name__)
         self.loader = ModelLoader()
         self.llm = self.loader.load_llm()
@@ -24,7 +24,7 @@ class DocumentComparatorLLM:
             parser=self.parser
         )   
         self.prompt = PROMPT_REGISTRY["document_comparison"]
-        self.chain = self.prompt | self.llm | self.parser | self.fixing_parser
+        self.chain = self.prompt | self.llm | self.parser 
         self.log.info("DocumentComparatorLLM initialized successfully")
     
     def compare_documents(self):
