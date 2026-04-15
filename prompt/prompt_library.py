@@ -11,7 +11,7 @@ document_analysis_prompt = ChatPromptTemplate.from_template("""
 
 document_comparison_prompt= ChatPromptTemplate.from_template("""
         You are provided with two documents. Your task is to do the following
-         1. compate the content in the two pdfs
+         1. compare the content in the two pdfs
          2. Identify the difference in PDF and note down the page numbers
          3. THe output you provide must be page wise comparison content
          4. If any page do not have any change, mention as "No Change"
@@ -21,6 +21,28 @@ document_comparison_prompt= ChatPromptTemplate.from_template("""
     {format_instructions}
     """)
 
+# contextualize_question_prompt = ChatPromptTemplate.from_messages([
+#     ("system", (
+#         "You are a helpful and precise assistant for answering questions based on the provided context.
+#         {context}"
+#     )),
+#     MessagePlaceholder("chat_history"),
+#     ("human", "{question}")
+# ])    
+
+# context_qa_prompt = ChatPromptTemplate.from_messages([
+#     ("system", (
+#         "You are a helpful and precise assistant for answering questions based on the provided context.
+#         {context}"
+#     )),
+#     MessagePlaceholder("chat_history"),
+#     ("human", "{question}")
+# ])    
+
 PROMPT_REGISTRY={"document_analysis": document_analysis_prompt,
                  "document_comparison": document_comparison_prompt
+                #  ,
+                #  "contextual_question": contextualize_question_prompt, # to be defined
+                #  "context_qa": context_qa_prompt # to be defined
                  }                                     
+

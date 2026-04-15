@@ -1,13 +1,14 @@
-from pydantic import BaseModel, Field, RootModel
-from typing import List, Optional, Dict, Any, Union
+from pydantic import BaseModel, RootModel #,Field
+from typing import List, Union #,Optional, Dict, Any
+from enum import Enum
 
 class Metadata(BaseModel):
     """Pydantic model to represent the metadata extracted from documents.
        This model can be extended with additional fields as needed.
     """
-    Summary: List[str] = Field(default_factory=list, description="List of summary points extracted from the document")
+    Summary: List[str] # = Field(default_factory=list, description="List of summary points extracted from the document")
     Title: str
-    Author: str
+    Author: List[str]
     DateCreated: str
     LastModified: str
     Publisher: str
@@ -25,4 +26,9 @@ class ChangeFormat(BaseModel):
 class SummaryResponse(RootModel[list[ChangeFormat]]):
     pass
     
+class PromptType(str, Enum):
+    DOCUMENT_ANALYSIS = "document_analysis"
+    DOCUMENT_COMPARISON = "document_comparison"
+    CONTEXTUAL_QUESTION = "contextual_question"
+    CONTEXT_QA = "context_qa"
     
