@@ -11,4 +11,8 @@ PyMupdf
 langchain-core
 langchain-classic
 pandas
+streamlit
+pytest
+lanchain_core
+lanchain-core[tracing]
 -e.
