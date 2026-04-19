@@ -18,7 +18,7 @@ class DocumentComparatorLLM:
         #summary response already defined in the models.py file 
         self.parser = JsonOutputParser(pydantic_object=SummaryResponse)
         self.prompt = PROMPT_REGISTRY[PromptType.DOCUMENT_COMPARISON.value]
-        self.fixing_parser = OutputFixingParser.from_llm( parser=self.parser, llm=self.llm )
+        #self.fixing_parser = OutputFixingParser.from_llm( parser=self.parser, llm=self.llm )
         self.chain = self.prompt | self.llm | self.parser 
         self.log.info("DocumentComparatorLLM initialized successfully")
     
@@ -31,13 +31,13 @@ class DocumentComparatorLLM:
                 "combined_docs" : combined_docs,
                 "format_instructions" : self.parser.get_format_instructions()
             }
-            self.log.info("Invoking document comparison using LLM")
+            self.log.info("Invoking document comparison LLM Chain")
             response = self.chain.invoke(inputs)
             self.log.info("Chain comparison completed successfully", response_preview=str(response)[:200])
             return self._format_response(response)
         
         except Exception as e:
-            self.log.error(f"Error in comparing documents: {e}")
+            self.log.error("Error in comparing documents", error=str(e))
             raise DocumentPortalException("An error occurred while comparing documents:", sys)
     
     def _format_response(self, response_parsed: list[dict]) -> pd.DataFrame:
@@ -45,9 +45,9 @@ class DocumentComparatorLLM:
         """
         try:
             df = pd.DataFrame(response_parsed)
-            self.log.info("Response formatted successfully into DataFrame")
+            #self.log.info("Response formatted successfully into DataFrame")
             return df
         except Exception as e:
-            self.log.error(f"Error in formatting response: {e}")
+            self.log.error("Error in formatting response", error=str(e))
             raise DocumentPortalException("An error occurred while formatting response:", sys)
     
