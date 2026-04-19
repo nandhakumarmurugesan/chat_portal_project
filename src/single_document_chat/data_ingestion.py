@@ -1,5 +1,5 @@
 import uuid
-from Pathlib import Path
+from pathlib import Path
 import sys
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -8,8 +8,8 @@ from logger.custom_logger import CustomLogger
 from exception.custom_exception import DocumentPortalException
 from utils.model_loader import ModelLoader
 
-Class SingleDocIngestor:
-    def_init__(self, data_dir: str = "data/single_document_chat",faiss_dir: str = "faiss_index"):
+class SingleDocIngestor:
+    def __init__(self, data_dir: str = "data/single_document_chat",faiss_dir: str = "faiss_index"):
         try:
             self.log = CustomLogger().get_logger(__name__)
             
@@ -29,10 +29,10 @@ Class SingleDocIngestor:
         try:
             documents=[]
             for uploaded_file in uploaded_files:
-                unique_filename = f"session_{datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S')}_{uuid.uuid4().hex[:8]}.pdf"}"
+                unique_filename = f"session_{datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S')}_{uuid.uuid4().hex[:8]}.pdf"
                 temp_path=self.data_dir / unique_filename
                 with open(temp_path, "wb") as f_out:
-                f_out.write(uploaded_file.read())
+                    f_out.write(uploaded_file.read())
                 loader = PyPDFLoader(str(temp_path))
                 docs = loader.load()
                 documents.extend(docs) 

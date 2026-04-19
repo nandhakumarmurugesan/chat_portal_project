@@ -1,19 +1,20 @@
 import sys
 import os
 from dotenv import load_dotenv
-from langchain_core.chat_history import BaseChatPromptTemplate
+#from langchain_core.chat_history import BaseChatPromptTemplate
+from langchain_core.prompts import BaseChatPromptTemplate
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_community.vectorstores import FAISS
 from langchain_core.runnables.history import RunnableWithMessageHistory
-from langchain.chains import create_history_aware_retriever, create_retriever_chain
-from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain_classic.chains import create_history_aware_retriever, create_retrieval_chain
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 from utils.model_loader import ModelLoader
 from exception.custom_exception import DocumentPortalException
 from logger.custom_logger import CustomLogger
 from prompt.prompt_library import PROMPT_REGISTRY
 from model.models import PromptType
 
-Class ConversationalRAG:
+class ConversationalRAG:
     
     def __init__(self, session_id: str, retriever) -> None:
         try:
@@ -76,10 +77,10 @@ Class ConversationalRAG:
     
     def invoke(self, user_input: str)-> str:
         try:
-            self.chain.invoke({
-                "input": user_input, 
-                config={"configurable": {"session_id": self.session_id}}
-            })
+            response = self.chain.invoke(
+                {"input":user_input}, 
+                config={"configurable": {"session_id": self.session_id} }
+            )
             answer = response.get("answer", "No answer")
             if not answer:
                 self.log.warning("No answer generated (Empty answer) by the RAG chain", session=self.session_id)
