@@ -14,5 +14,6 @@ pandas
 streamlit
 pytest
 lanchain_core
-lanchain-core[tracing]
+docx2txt
+lanchain_core[tracing]
 -e.
